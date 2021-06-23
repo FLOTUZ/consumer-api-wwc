@@ -15,7 +15,7 @@ app.get("/hola", function (req, res) {
     app_name: "Core",
     scope: "read_write",
     user_id: 1,
-    return_url: "https://api-wwc.herokuapp.com/return-page",
+    return_url: "https://google.com",
     callback_url: "https://api-wwc.herokuapp.com/callback-endpoint",
   };
   const query_string = querystring.stringify(params).replace(/%20/g, "+");
