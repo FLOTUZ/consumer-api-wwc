@@ -9,7 +9,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/hola", function (req, res) {
-  const store_url = "https://bordados.noobhuman.ninja";
+  const store_url = "https://core.noobhuman.ninja";
   const endpoint = "/wc-auth/v1/authorize";
   const params = {
     app_name: "Core",
