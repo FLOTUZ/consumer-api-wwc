@@ -1,8 +1,13 @@
 const querystring = require("querystring");
 const express = require("express");
-const app = express();
+const cors = require("cors");
 
+const app = express();
+//Puerto del sistema
 const port = process.env.PORT || 4000;
+
+//Para aceptar origenes cruzados
+app.use(cors());
 
 app.get("/", (req, res) => {
   res.send({ msg: "Hola mundo" });
