@@ -2,6 +2,8 @@ const querystring = require("querystring");
 const express = require("express");
 const app = express();
 
+const port = process.env.PORT || 4000;
+
 app.get("/", function (req, res) {
     const store_url = 'https://bordados.noobhuman.ninja';
     const endpoint = '/wc-auth/v1/authorize';
@@ -28,4 +30,4 @@ app.get("/callback-endpoint", function (req, res) {
     console.log(data);
     res.json({msg:"Se ha logeuado con wordpress", data: data});
   });
-app.listen(4000);
+app.listen(port);
