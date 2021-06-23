@@ -9,8 +9,8 @@ app.get("/", function (req, res) {
       app_name: 'Core',
       scope: 'read_write',
       user_id: 1,
-      return_url: 'http://google.com',
-      callback_url: 'https://localhost:4000/callback-endpoint'
+      return_url: 'https://api-wwc.herokuapp.com/return-page',
+      callback_url: 'https://api-wwc.herokuapp.com/callback-endpoint'
     };
   const query_string = querystring.stringify(params).replace(/%20/g, "+");
 
@@ -20,14 +20,12 @@ app.get("/", function (req, res) {
 
 app.get("/return-page", function (req, res) {
   let data = decodeURI(req.query);
-  console.log(data);
-
-  res.send("Se ha logeuado con wordpress");
+  res.json({msg:"Se ha logeuado con wordpress", data: data});
 });
 
 app.get("/callback-endpoint", function (req, res) {
     let data = decodeURI(req.query);
     console.log(data);
-    res.send("Se ha logeuado con wordpress");
+    res.json({msg:"Se ha logeuado con wordpress", data: data});
   });
 app.listen(4000);
