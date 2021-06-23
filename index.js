@@ -4,7 +4,10 @@ const app = express();
 
 const port = process.env.PORT || 4000;
 
-app.get("/", function (req, res) {
+app.get('/', (req, res)=>{
+    res.json({msg: "Hola mundo"})
+})
+app.get("/hola", function (req, res) {
   const store_url = "https://bordados.noobhuman.ninja";
   const endpoint = "/wc-auth/v1/authorize";
   const params = {
